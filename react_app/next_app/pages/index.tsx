@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <>
       <div className="container">
-        <h1 className="text-3xl font-bold underline bg-red-500 hover:bg-orange-500">
+        <h1 className="bg-red-500 text-3xl font-bold underline hover:bg-orange-500">
           Hello world!
         </h1>
         <DropdownMenu />
