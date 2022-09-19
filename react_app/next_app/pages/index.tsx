@@ -4,6 +4,7 @@ import Link from "next/link";
 import DropdownMenu from "@/components/elements/DropdownMenu";
 
 import { motion } from "framer-motion";
+import Counter from "@/components/elements/Counter";
 
 const Home: NextPage = () => {
   return (
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
           bottom: 50,
         }}
       />
+      <Counter />
     </>
   );
 };
