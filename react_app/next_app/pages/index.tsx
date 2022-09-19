@@ -3,37 +3,26 @@ import Link from "next/link";
 
 import DropdownMenu from "@/components/elements/DropdownMenu";
 
+import { motion } from "framer-motion";
+
 const Home: NextPage = () => {
   return (
     <>
-      <div className="container">
-        <h1 className="bg-red-500 text-3xl font-bold underline hover:bg-orange-500">
-          Hello world!
-        </h1>
-        <DropdownMenu />
-        <Link href="/sample">
-          <a>sample</a>
-        </Link>
-      </div>
-      <div className="drawer">
-        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-        <div className="drawer-content">
-          <label htmlFor="my-drawer" className="btn btn-primary drawer-button">
-            Open drawer
-          </label>
-        </div>
-        <div className="drawer-side">
-          <label htmlFor="my-drawer" className="drawer-overlay"></label>
-          <ul className="menu w-80 overflow-y-auto bg-base-100 p-4 text-base-content">
-            <li>
-              <a>Sidebar Item 1</a>
-            </li>
-            <li>
-              <a>Sidebar Item 2</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <motion.div
+        style={{ backgroundColor: "green", width: "300px", height: "300px" }}
+        animate={{
+          scale: [1, 2, 2, 1, 1],
+          rotate: [0, 0, 270, 270, 0],
+          borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+        }}
+        drag
+        dragConstraints={{
+          top: 0,
+          left: 0,
+          right: 50,
+          bottom: 50,
+        }}
+      />
     </>
   );
 };
