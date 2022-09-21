@@ -1,12 +1,19 @@
 import type { NextPage } from "next";
-import Link from "next/link";
-
-import DropdownMenu from "@/components/elements/DropdownMenu";
-
 import { motion } from "framer-motion";
 import Counter from "@/components/elements/Counter";
+import { useEffect, useState } from "react";
 
 const Home: NextPage = () => {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const response = await fetch("/api/users");
+      const data = await response.json();
+      setUsers(data.users);
+    };
+    fetchUsers();
+  }, []);
+
   return (
     <>
       <motion.div
@@ -24,7 +31,20 @@ const Home: NextPage = () => {
           bottom: 50,
         }}
       />
+
       <Counter />
+      <ul>
+        {users.map((user) => (
+          <>
+            <li key={user.id}>
+              <p className="text-rose-300">name: {user.name}</p>
+              <p className="text-sky-300">email: {user.email}</p>
+              <p className="text-amber-300">street: {user.address.street}</p>
+            </li>
+            <br />
+          </>
+        ))}
+      </ul>
     </>
   );
 };
