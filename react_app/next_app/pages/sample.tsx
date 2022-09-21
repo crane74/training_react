@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import Head from "next/head";
-import RightToLeft from "@/components/FramerTransition/RightToLeft";
+import { RightToLeft } from "@/components/FramerTransition/Transition";
 
 const Sample: NextPage = () => {
   return (
