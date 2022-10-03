@@ -19,13 +19,22 @@ const Home: NextPage = () => {
     fetchUsers();
   }, []);
 
+  type user = {
+    id: number;
+    name: string;
+    email: string;
+    address: string;
+  };
+
   return (
     <>
       <RightToLeft>
         <div>
-          <Counter />
-          <ul>
-            {users.map((user) => (
+          <div className="m-4">
+            <Counter />
+          </div>
+          <ul className="m-4 flex flex-wrap items-center justify-center gap-6">
+            {users.map((user: user) => (
               <AppearingSoftly>
                 <>
                   <li key={user.id}>
