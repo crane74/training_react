@@ -28,7 +28,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <RightToLeft>
+      <AppearingSoftly>
         <div>
           <div className="m-4">
             <Counter />
@@ -57,7 +57,7 @@ const Home: NextPage = () => {
             ))}
           </ul>
         </div>
-      </RightToLeft>
+      </AppearingSoftly>
     </>
   );
 };

@@ -69,7 +69,6 @@ export const RightToLeft = ({ children }: LayoutProps) => {
       }}
       initial={{
         x: 100,
-        y: -100,
         opacity: 0,
       }}
       exit={{

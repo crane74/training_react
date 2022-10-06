@@ -1,7 +1,10 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import Head from "next/head";
-import { RightToLeft } from "@/components/FramerTransition/Transition";
+import {
+  RightToLeft,
+  AppearingSoftly,
+} from "@/components/FramerTransition/Transition";
 
 const Sample: NextPage = () => {
   return (
@@ -12,7 +15,7 @@ const Sample: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <RightToLeft>
+      <AppearingSoftly>
         <main className="flex min-h-screen flex-1 flex-col items-center justify-center py-16">
           <h1 className="m-0 text-7xl">
             Welcome to{" "}
@@ -75,7 +78,7 @@ const Sample: NextPage = () => {
             </a>
           </div>
         </main>
-      </RightToLeft>
+      </AppearingSoftly>
 
       {/* <footer className={styles.footer}>
         <a
