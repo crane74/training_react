@@ -13,6 +13,12 @@ type panels = {
   id?: number;
 }[];
 
+const mid_side =
+  "absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0";
+
+const left_side =
+  "absolute z-10 -ml-4 mt-3 w-screen max-w-md transform px-2 sm:px-0 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2";
+
 const NavPopover = (props: {
   title: string;
   VerticalPanelIcon: panels;
@@ -53,11 +59,7 @@ const NavPopover = (props: {
             leaveTo="opacity-0 translate-y-1"
           >
             <Popover.Panel
-              className={classNames(
-                props.position
-                  ? "absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0"
-                  : "absolute z-10 -ml-4 mt-3 w-screen max-w-md transform px-2 sm:px-0 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2"
-              )}
+              className={classNames(props.position ? mid_side : left_side)}
             >
               <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                 <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
